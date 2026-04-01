@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<meta charset="UTF-8">
 <title>Birthday Surprise</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -30,17 +28,32 @@
 
 <div class="container">
 
-<h1>🎉 Happy Birthday Dear  .....❤️!!! 🎉</h1>
+<h1>🎉 Happy Birthday .....❤️!!! 🎉</h1>
+<h1 id="birthdayText" class="birthday-text">Happy Birthday ❤️</h1>
 
 <button id="startBtn" onclick="startSurprise()" style="display:none;"> Start Surprise 🎁 </button>
 <p id="message"></p>
-
+<!-- 
 <div class="cake3d" onclick="cutCake()">
 🎂
 <div class="candles">
 <span>2</span>
 <span>1</span>
 </div>
+</div> -->
+
+
+<div class="cake3d" onclick="blowCandles()">
+
+🎂
+
+<div class="candles">
+
+<span class="flame">🔥</span>
+<span class="flame">🔥</span>
+
+</div>
+
 </div>
 
 <div class="age" id="age">21</div>
@@ -51,11 +64,11 @@
 
 </div>
 
-<button onclick="openLetter()">💌 Open Letter</button>
+<!-- <button onclick="openLetter()">💌 Open Letter</button> -->
 
 </div>
 
-<div class="letter" id="letter">
+<!-- <div class="letter" id="letter">
 
 <h2>For You ❤️</h2>
 
@@ -66,8 +79,8 @@ Wishing you happiness, love and success always.
 
 <button onclick="closeLetter()">Close</button>
 
-</div>
-
+</div> -->
+<canvas id="fireworks"></canvas>
 <div class="age" id="age">21</div>
 <div class="food-section">
 
@@ -90,9 +103,80 @@ Wishing you happiness, love and success always.
 </div>
 
 </div>
+<div class="hearts"></div>
+<div class="balloons"></div>
 
 
+
+<div class="gift-box" onclick="openGift()">
+
+<div class="gift">🎁</div>
+<p class="message">Click Gift</p>
+
+</div>
+<p id="typing"></p>
+ <canvas id="galaxy"></canvas>
+
+
+<!-- <div class="cake-container">
+<div class="cake">🎂</div>
+<button onclick="cutCake()">Cut Cake 🎉</button>
+</div> -->
+
+
+
+<div class="gallery">
+
+<img src="img1.jpg">
+<img src="img2.jpg">
+<img src="img3.jpg">
+<img src="img4.jpg">
+
+</div>
+
+<div class="flipbook">
+
+<div class="page front">
+<h2>❤️ For You</h2>
+<!-- <p>Click to read message</p> -->
+</div>
+
+<div class="page back">
+<p>
+You are the reason for many smiles.  
+Wishing you happiness and love always.  
+Happy Birthday 🎉
+</p>
+</div>
+
+</div>
+
+<!-- <div class="cake-container">
+<div class="cake">🎂</div>
+<button onclick="cutCake()">Cut Cake 🎉</button>
+</div> -->
+
+<canvas id="confetti"></canvas>
+
+
+
+<div class="reel">
+
+<img id="slide" src="./img1.jpg">
+
+</div>
+
+
+
+<audio id="music" autoplay loop>
+<source src="birthday.mp3" type="audio/mp3">
+</audio>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="script.js"></script>
+
+
 
 </body>
 </html>
