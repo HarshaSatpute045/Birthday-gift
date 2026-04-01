@@ -1,0 +1,535 @@
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial;
+overflow:hidden;
+color:white;
+background:linear-gradient(#000428,#004e92);
+}
+
+#fireworks{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+pointer-events:none;
+}
+
+.container{
+position:relative;
+z-index:2;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+/* cake */
+
+.cake3d{
+font-size:70px;
+cursor:pointer;
+transition:transform 1s;
+}
+
+.cake3d:hover{
+transform:rotateY(360deg) scale(1.2);
+}
+
+/* slider */
+
+.reel{
+margin-top:20px;
+display:none;
+}
+
+.reel img{
+width:220px;
+height:300px;
+object-fit:cover;
+border-radius:15px;
+}
+
+/* letter */
+
+.letter{
+
+position:fixed;
+
+top:30%;   /* pehle 50% tha */
+
+right:-350px;
+
+transform:translateY(-50%);
+
+background:white;
+color:black;
+
+padding:30px;
+border-radius:20px;
+
+width:300px;
+
+transition:0.5s;
+
+}
+
+/* jab letter open ho */
+
+.letter.show{
+
+right:20px;   /* screen ke right side par aa jayega */
+
+}
+
+/* food */
+
+.food-section{
+display:none;
+margin-top:20px;
+}
+
+.food-list{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.food-card{
+background:#ff2e63;
+color:white;
+padding:10px 15px;
+border-radius:15px;
+font-weight:bold;
+animation:pop 1s ease;
+}
+
+@keyframes pop{
+0%{transform:scale(0)}
+100%{transform:scale(1)}
+}
+
+
+.food-card{
+background:linear-gradient(45deg,#ff2e63,#ff7b54);
+color:white;
+padding:10px 15px;
+border-radius:20px;
+font-weight:bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.food-card:hover{
+transform:scale(1.1);
+}
+
+
+.age{
+
+display:none;
+font-size:40px;
+font-weight:bold;
+margin-top:10px;
+color:#ffd700;
+
+animation:popAge 1s ease;
+
+}
+
+@keyframes popAge{
+
+0%{transform:scale(0)}
+
+100%{transform:scale(1)}
+
+}
+
+
+.candles{
+font-size:20px;
+margin-top:-20px;
+animation:flicker 1s infinite alternate;
+}
+
+@keyframes flicker{
+
+0%{opacity:0.7}
+100%{opacity:1}
+
+}
+
+.age{
+
+display:none;
+font-size:40px;
+font-weight:bold;
+margin-top:10px;
+color:#ffd700;
+position:relative;
+
+}
+
+/* mini fireworks */
+
+.spark{
+position:absolute;
+width:6px;
+height:6px;
+border-radius:50%;
+background:yellow;
+animation:spark 1s linear forwards;
+}
+
+@keyframes spark{
+
+0%{
+transform:scale(1);
+opacity:1;
+}
+
+100%{
+transform:scale(6);
+opacity:0;
+}
+
+}
+
+
+
+/* ---------- Responsive Design ---------- */
+
+@media (max-width:900px){
+
+.container{
+width:90%;
+padding:20px;
+}
+
+.reel img{
+width:180px;
+height:240px;
+}
+
+.cake3d{
+font-size:60px;
+}
+
+.food-list{
+gap:8px;
+}
+
+.food-card{
+padding:8px 12px;
+font-size:14px;
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:600px){
+
+body{
+padding:10px;
+align-items:flex-start;
+}
+
+.container{
+width:100%;
+margin-top:40px;
+padding:20px;
+}
+
+h1{
+font-size:24px;
+}
+
+button{
+padding:8px 14px;
+font-size:14px;
+}
+
+.cake3d{
+font-size:55px;
+}
+
+.reel img{
+width:150px;
+height:200px;
+}
+
+.age{
+font-size:32px;
+}
+
+/* food section mobile grid */
+
+.food-list{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.food-card{
+font-size:13px;
+padding:8px;
+}
+
+/* letter mobile */
+
+.letter{
+
+width:90%;
+right:-100%;
+top:40%;
+
+}
+
+.letter.show{
+
+right:5%;
+
+}
+
+}
+
+/* very small devices */
+
+@media (max-width:400px){
+
+h1{
+font-size:20px;
+}
+
+.cake3d{
+font-size:45px;
+}
+
+.reel img{
+width:130px;
+height:170px;
+}
+
+.food-card{
+font-size:12px;
+}
+
+}
+
+
+
+/* curtain */
+
+#curtain{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:9999;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* curtain sides */
+
+.curtain{
+
+position:absolute;
+top:0;
+width:50%;
+height:100%;
+
+background:linear-gradient(90deg,#b45151,#d69090);
+
+transition:1.5s;
+
+}
+
+.curtain.left{
+left:0;
+}
+
+.curtain.right{
+right:0;
+}
+
+/* button */
+
+#enterBtn{
+
+position:relative;
+z-index:10000;
+
+padding:15px 30px;
+
+font-size:20px;
+
+border:none;
+
+border-radius:10px;
+
+background:#ffd700;
+
+cursor:pointer;
+
+animation:pulse 1s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{transform:scale(1)}
+100%{transform:scale(1.1)}
+
+}
+
+/* open curtain */
+
+.open .left{
+transform:translateX(-100%);
+}
+
+.open .right{
+transform:translateX(100%);
+}
+
+
+/* intro screen */
+
+#intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+z-index:9999;
+overflow:hidden;
+}
+
+/* spotlight */
+
+.spotlight{
+position:absolute;
+top:50%;
+left:50%;
+width:300px;
+height:300px;
+transform:translate(-50%,-50%);
+background:radial-gradient(circle,rgba(255,255,255,0.4),transparent);
+animation:spotMove 4s infinite alternate;
+}
+
+@keyframes spotMove{
+
+0%{
+transform:translate(-40%,-50%);
+}
+
+100%{
+transform:translate(-60%,-50%);
+}
+
+}
+
+/* curtain */
+
+#curtain{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.curtain{
+
+position:absolute;
+top:0;
+width:50%;
+height:100%;
+background:linear-gradient(#8b0000,#b22222);
+transition:1.5s;
+}
+
+.curtain.left{
+left:0;
+}
+
+.curtain.right{
+right:0;
+}
+
+/* open animation */
+
+.open .left{
+transform:translateX(-100%);
+}
+
+.open .right{
+transform:translateX(100%);
+}
+
+/* button */
+
+#enterBtn{
+
+padding:15px 30px;
+font-size:22px;
+border:none;
+border-radius:10px;
+background:#ffd700;
+cursor:pointer;
+
+animation:glow 1s infinite alternate;
+
+}
+
+@keyframes glow{
+
+0%{
+box-shadow:0 0 10px gold;
+}
+
+100%{
+box-shadow:0 0 30px gold;
+}
+
+}
+
+
+#startBtn{
+
+display:none;
+margin-top:20px;
+
+padding:12px 25px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:10px;
+
+background:#ffd700;
+
+cursor:pointer;
+
+}
+
+
+
+
